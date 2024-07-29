@@ -3,7 +3,7 @@ Time Series Analysis Shiny App
 This is the TimeScout Shiny App codes. You could download the files and run TimeScout with R shiny.
 
 Brief Architecture:
-![alt text]([http://url/to/img.png](https://gitlab.com/Johnnyee/ids721project1/-/wikis/uploads/5b3421a1789f1391f124564d3af6d776/image.png))
+!(https://gitlab.com/Johnnyee/ids721project1/-/wikis/uploads/5b3421a1789f1391f124564d3af6d776/image.png)
 
 TimeScout Link:
 https://johnnye.shinyapps.io/TimeScout/
