@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Play:wght@400;700&display=swap');
+
+
+/*
+ * Skin: Blue
+ * ----------
+ */
+ .skin-blue .main-header .navbar {
+    background-color: white;
+  }
+  .skin-blue .main-header .navbar .nav > li > a {
+    color: grey !important;
+  }
+  .skin-blue .main-header .navbar .nav > li > a:hover,
+  .skin-blue .main-header .navbar .nav > li > a:active,
+  .skin-blue .main-header .navbar .nav > li > a:focus,
+  .skin-blue .main-header .navbar .nav .open > a,
+  .skin-blue .main-header .navbar .nav .open > a:hover,
+  .skin-blue .main-header .navbar .nav .open > a:focus,
+  .skin-blue .main-header .navbar .nav > .active > a {
+    background: white;
+    color: black !important;
+  }
+  .skin-blue .main-header .navbar .sidebar-toggle {
+    color: white;
+  }
+  .skin-blue .main-header .navbar .sidebar-toggle:hover {
+    color: #7c95e3;
+  }
+  .skin-blue .main-header .navbar .sidebar-toggle {
+    color: #406ad8;
+    font-size: 20px; /* Increase font size to make the toggle larger */
+    padding: 10px 0px; /* Adjust padding to increase the overall size */
+  }
+  .skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: white;
+  }
+  @media (max-width: 767px) {
+    .skin-blue .main-header .navbar .dropdown-menu li.divider {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .skin-blue .main-header .navbar .dropdown-menu li a {
+      color: #fff;
+    }
+    .skin-blue .main-header .navbar .dropdown-menu li a:hover {
+      background: #367fa9;
+    }
+  }
+  .skin-blue .main-header .logo {
+    background-color: #367fa9;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+  }
+  .skin-blue .main-header .logo:hover {
+    background-color: #357ca5;
+  }
+  .skin-blue .main-header li.user-header {
+    background-color: #3c8dbc;
+  }
+  .skin-blue .content-header {
+    background: transparent;
+  }
+  .skin-blue .wrapper,
+  .skin-blue .main-sidebar,
+  .skin-blue .left-side {
+    background-color: white;
+  }
+  .skin-blue .user-panel > .info,
+  .skin-blue .user-panel > .info > a {
+    color: #fff;
+  }
+  .skin-blue .sidebar-menu > li.header {
+    color: #4b646f;
+    background: #1a2226;
+  }
+  .skin-blue .sidebar-menu > li > a {
+    border-left: 3px solid transparent;
+  }
+  .skin-blue .sidebar-menu > li:hover > a,
+  .skin-blue .sidebar-menu > li.active > a {
+    color: #ffffff;
+    background: white;
+    border-left-color: #3c8dbc;
+  }
+  .skin-blue .sidebar-menu > li > .treeview-menu {
+    margin: 0 1px;
+    background: #2c3b41;
+  }
+  .skin-blue .sidebar a {
+    color: #b8c7ce;
+  }
+  .skin-blue .sidebar a:hover {
+    text-decoration: none;
+  }
+  .skin-blue .treeview-menu > li > a {
+    color: #8aa4af;
+  }
+  .skin-blue .treeview-menu > li.active > a,
+  .skin-blue .treeview-menu > li > a:hover {
+    color: #ffffff;
+  }
+  .skin-blue .sidebar-form {
+    border-radius: 3px;
+    border: 1px solid #374850;
+    margin: 10px 10px;
+  }
+  .skin-blue .sidebar-form input[type="text"],
+  .skin-blue .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #374850;
+    border: 1px solid transparent;
+    height: 35px;
+  }
+  .skin-blue .sidebar-form input[type="text"] {
+    color: #666;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+  }
+  .skin-blue .sidebar-form input[type="text"]:focus,
+  .skin-blue .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    background-color: #fff;
+    color: #666;
+  }
+  .skin-blue .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    border-left-color: #fff;
+  }
+  .skin-blue .sidebar-form .btn {
+    color: #999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0;
+  }
+  .skin-blue.layout-top-nav .main-header > .logo {
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+  }
+  .skin-blue.layout-top-nav .main-header > .logo:hover {
+    background-color: #3b8ab8;
+  }
+
+
+ /*DIY
+
+ /* General body styling */
+body {
+    font-family: "Roboto", sans-serif!important;
+    background-color: #F2F4F6;
+    color: #333; 
+}
+
+/* Header styling */
+.main-header .logo {
+    font-family: "Play", sans-serif!important;
+    font-weight:bold!important;
+    letter-spacing:-1px; 
+    font-weight: 1000;
+    font-size:24px!important; 
+    color: black !important;;
+    background:  white !important;
+}
+
+  .skin-blue .main-header .navbar .nav > li > a {
+    color: black;
+  }
+
+
+
+/* Sidebar styling */
+.skin-blue .sidebar {
+    background-color: white; 
+}
+
+.sidebar .sidebar-menu > li.active > a {
+    background-color: #E0f3ff; /* Teal background for active items */
+}
+
+.sidebar .sidebar-menu > li > a {
+    color: white; /* Light grey text */
+}
+
+.main-sidebar {
+    background-color:  white!important;
+    font-size: 15px;
+  }
+
+.skin-blue .sidebar .sidebar-menu > li > a:hover {
+    background-color: #E0f3ff; /* Lighter blue for hover */
+    color: #ffffff; /* Optional: change text color on hover */
+}
+
+.sidebar-menu > li > .treeview-menu {
+    margin:0 10px; 
+    background:white!important;
+    box-shadow:inset 0px 0px 7px white;
+    padding-bottom:2px;
+}
+
+/* Titles and texts */
+h2 {
+    color: #2980b9; /* Blue titles */
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Buttons styling */
+.btn-primary {
+    background-color: #E0f3ff; /* Consistent blue for buttons */
+    border-color: #E0f3ff; /* Slightly darker border */
+    color: #343a40;
+}
+
+.btn-info {
+    background-color: #16a085; /* Teal for informational buttons */
+    color: #ffffff;
+}
+
+.btn-warning {
+    background-color: #f39c12; /* Orange for warning buttons */
+    color: #ffffff; 
+}
+
+.btn-primary:hover {
+    background-color: #88c7ed;
+    border-color: #88c7ed;
+    color: black;
+
+}
+
+.btn-info:hover {
+  background-color: #01866b; /* Teal for informational buttons */
+  color: #ffffff;
+}
+
+.btn-warning:hover {
+  background-color: #e58d00; /* Teal for informational buttons */
+  color: #ffffff;
+}
+
+.tab-pane {
+    margin-left: 20px; /* Adds margin to the left */
+    margin-right: 20px; /* Adds margin to the right */
+    padding: 20px; /* Adds padding inside the tab pane for content spacing */
+    }
+    #save_message {
+            margin-left: 20px; /* Adjust this value to move the message right */
+            display: none; /* Initially hide the message */
+    }
+    
+    .checkbox-group-label {
+      font-size: 24px;
+      font-weight: bold;
+      color: #31708f;
+      width: 1000px;
+      margin-left: 20px;/* Adjust the color to fit your app theme */
+    }
+    .shiny-options-group {
+      padding: 5px;
+      border: 5px solid #ccc;
+      border-color: #2980b9;
+      background-color: #2980b9; /* Light grey background */
+      border-radius: 0px;
+      margin-bottom: 5px;
+      width: 10000px; /* Fixed width for checkboxes */
+      font-size: 18px;
+      font-family: Optima, sans-serif;
+      color: white;
+      font-weight:900;
+    }
+
+
+
+
+/* Table styling */
+.display.compact {
+    font-size: 0.9em;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #2980b9;
+    color: white !important;
+}
+
+
+/* Tooltip styling */
+.tooltip-inner {
+    background-color: #16a085; /* Teal tooltips */
+    color: #ecf0f1; /* Light grey text */
+}
+
+/* Custom icons in the sidebar */
+.sidebar-menu .fa {
+    color: #ecf0f1;
+}
+
+/* Alert styling */
+.shinyalert-modal {
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Custom styling for links */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Sidebar styling */
+.skin-blue .sidebar a {
+    color: #000000; /* Change text color to black */
+}
+
+.skin-blue .sidebar .sidebar-menu > li > a {
+    color: #000000; /* Change text color to black */
+}
+
+/* Optional: change text color on hover to a different shade of black */
+.skin-blue .sidebar .sidebar-menu > li > a:hover {
+    color: #5b5f64; /* Dark grey text color on hover */
+}
+
+/* Active sidebar item text color */
+.skin-blue .sidebar .sidebar-menu > li.active > a {
+    color: #000000; /* Change text color to black for active items */
+}
+
+/* Optional: change active sidebar item text color on hover */
+.skin-blue .sidebar .sidebar-menu > li.active > a:hover {
+    color: #333333; /* Dark grey text color on hover for active items */
+}

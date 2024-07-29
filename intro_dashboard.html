@@ -1,0 +1,17 @@
+<div style='display: flex; justify-content: space-between; align-items: center;'>
+    <div style='display: flex; align-items: center;'>
+      <img src='example.png' style='height: 50px; margin-right: 15px;' alt='Logo'/>
+      <div>
+        <div style='color: #495057; font-size: 22px;'>Example Dashboard</div>
+        <div style='color: #8F9498; font-size: 14px;'>This is a static example showcasing predefined outputs.</div>
+      </div>
+    </div>
+    <button onclick='navigateToImplement()' class='btn btn-primary' style='height: 50px; font-weight: bold;'>TRY IT YOURSELF</button>
+  </div>
+  <script>
+function navigateToImplement() {
+  var uniqueValue = 'implement' + new Date().getTime();
+  Shiny.setInputValue('navToTab', uniqueValue);
+}
+  </script>
+  
