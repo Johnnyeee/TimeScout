@@ -577,7 +577,7 @@ server <- function(input, output, session) {
   observeEvent(input$fetch_data, {
     shinyjs::show("loading")
     if (reactive_stage$api_update) {
-      fredr_set_key("512d65cc621b881c79b16c86369f4f88")
+      fredr_set_key("<Add Your Own API Key>")
     } else {
       fredr_set_key(input$api_key_input)
     }
