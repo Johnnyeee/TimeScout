@@ -327,24 +327,25 @@ server <- function(input, output, session) {
   
   temp_result_ex1 <- diff(exampleData$DGS10, differences = 12)
   temp_result_ex2 <- diff(temp_result_ex1, differences = 1)
-  processed_plot_data_ex <- tibble(OV_values = temp_result_ex2)
+  acfpacf_data_ex <- tibble(OV_values = temp_result_ex2)
+  processed_plot_data_ex <- data.frame(Date = as.Date(exampleData$DATE[1:length(temp_result_ex2)]), OV_values = temp_result_ex2)
   
   # data processed plot
   output$processed_data_plot_ex <- renderPlotly({
-    p <- ggplot(processed_plot_data_ex, aes(x = seq_along(OV_values), y = OV_values))  +
+    p <- ggplot(processed_plot_data_ex, aes(x = Date, y = OV_values))  +
       geom_line(color = "#007bff") +
-      geom_point(aes(text = paste("Time Index:", seq_along(OV_values), "DGS10:", OV_values)), size = 0.5, color = "#DC3545")+
+      geom_point(aes(text = paste("Time:", Date, "DGS10:", OV_values)), size = 0.5, color = "#DC3545")+
       labs(title = paste("Processed Data Visualization: DGS10"), x = "Time", y = "Outcome Variable Values Adjusted")+theme_classic()
     ggplotly(p, tooltip = "text")
   })
 
   # ACF/PACF
   output$ACF_ex <- renderPlot({
-    acf(processed_plot_data_ex, lag.max = 60, main = paste("ACF: DGS10"))
+    acf(acfpacf_data_ex, lag.max = 60, main = paste("ACF: DGS10"))
   })
 
   output$PACF_ex <- renderPlot({
-    pacf(processed_plot_data_ex, lag.max = 60, main = paste("PACF: DGS10"))
+    pacf(acfpacf_data_ex, lag.max = 60, main = paste("PACF: DGS10"))
   })
   
   original_data <- matrix(exampleData[[2]], ncol=1)
@@ -576,7 +577,7 @@ server <- function(input, output, session) {
   observeEvent(input$fetch_data, {
     shinyjs::show("loading")
     if (reactive_stage$api_update) {
-      fredr_set_key("<Please put your API Key here>")
+      fredr_set_key("512d65cc621b881c79b16c86369f4f88")
     } else {
       fredr_set_key(input$api_key_input)
     }
@@ -702,6 +703,7 @@ server <- function(input, output, session) {
     shinyjs::show("loading")
     req(reactive_stage$data_input)
     
+    Date <- reactive_stage$data_input$Date
     temp_data <- reactive_stage$data_input$OV_values
     if (input$engineering == "Raw") {
       temp_result <- temp_data
@@ -714,6 +716,7 @@ server <- function(input, output, session) {
       temp_result <- diff(temp_result1, differences = 1)
     }
     
+    reactive_stage$processed_plot_data_with_time <- data.frame(Date = as.Date(Date[1:length(temp_result)]), OV_values = temp_result)
     reactive_stage$processed_plot_data <- tibble(OV_values = temp_result)
     values$vb_engineering = TRUE
     values$currentOutcomeVariable2 <- input$outcome_variable
@@ -728,12 +731,12 @@ server <- function(input, output, session) {
   
   
   output$processed_data_plot <- renderPlotly({
-    req(reactive_stage$processed_plot_data)
+    req(reactive_stage$processed_plot_data_with_time, reactive_stage$processed_plot_data)
     tryCatch({
       reactive_stage$model_visible <- TRUE
-      p <- ggplot(reactive_stage$processed_plot_data, aes(x = seq_along(OV_values), y = OV_values))  +
+      p <- ggplot(reactive_stage$processed_plot_data_with_time, aes(x = Date, y = OV_values))  +
         geom_line(color = "#007bff") +
-        geom_point(aes(text = paste("Index:", seq_along(OV_values), "Outcome Variable Value:", OV_values)), size = 0.5, color = "#DC3545")+
+        geom_point(aes(text = paste("Time:", Date, "Outcome Variable Value:", OV_values)), size = 0.5, color = "#DC3545")+
         labs(title = paste("Processed Data Visualization:",values$currentOutcomeVariable2), x = "Time", y = "Outcome Variable Values Adjusted")+theme_classic()
       
       # Convert ggplot object to plotly
@@ -1084,7 +1087,6 @@ server <- function(input, output, session) {
                   ""
                 }
               ),
-              subtitle = "ABC",
               x = "Time", y = input$outcome_variable
             ) +
             theme_classic()+
