@@ -716,7 +716,7 @@ server <- function(input, output, session) {
       temp_result <- diff(temp_result1, differences = 1)
     }
     
-    reactive_stage$processed_plot_data_with_time <- data.frame(Date = as.Date(Date[1:length(temp_result)]), OV_values = temp_result)
+    reactive_stage$processed_plot_data_with_time <- tibble(Date = as.Date(Date[1:length(temp_result)]), OV_values = temp_result)
     reactive_stage$processed_plot_data <- tibble(OV_values = temp_result)
     values$vb_engineering = TRUE
     values$currentOutcomeVariable2 <- input$outcome_variable
